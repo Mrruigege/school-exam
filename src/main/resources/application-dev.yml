@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:mysql://xx.xxx.xxx.xxx:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    # 配置druid其他配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall
+
+mybatis:
+  # mybatis的全局配置文件位置
+  config-location: classpath:mybatis/mybatis-cfg.xml
+  # mybatis的mapper文件位置
+  mapper-locations: classpath:mybatis/mapper/*.xml
+logging:
+  config: classpath:log4j2-spring.xml
